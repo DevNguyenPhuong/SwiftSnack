@@ -49,6 +49,7 @@ buttonClose.addEventListener("click", () => {
 
 // fixed menu
 const fixedMenu = document.querySelector("#slider");
+const header = document.querySelector(".header");
 
 const obs = new IntersectionObserver(
   function (entries) {
@@ -69,4 +70,5 @@ const obs = new IntersectionObserver(
     rootMargin: "0px",
   }
 );
-obs.observe(fixedMenu);
+if (fixedMenu !== null) obs.observe(fixedMenu);
+else obs.observe(header);
