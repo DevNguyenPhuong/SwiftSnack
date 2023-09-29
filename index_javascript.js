@@ -46,3 +46,27 @@ let buttonClose = document.getElementById("close-popup");
 buttonClose.addEventListener("click", () => {
   popup.style.display = "none";
 });
+
+// fixed menu
+const fixedMenu = document.querySelector("#slider");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+
+    if (ent.isIntersecting === false) {
+      document.querySelector(".row .leftcolumn").classList.add("sticky");
+    }
+    if (ent.isIntersecting === true) {
+      document.querySelector(".row  .leftcolumn").classList.remove("sticky");
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "0px",
+  }
+);
+obs.observe(fixedMenu);
