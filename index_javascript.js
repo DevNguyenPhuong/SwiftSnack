@@ -54,7 +54,7 @@ const header = document.querySelector(".header");
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
-    console.log(ent);
+    // console.log(ent);
 
     if (ent.isIntersecting === false) {
       document.querySelector(".row .leftcolumn").classList.add("sticky");
